@@ -11,7 +11,7 @@ class Explorer
 public:
   Explorer(int _level);
 
-  void add(Board const & board, int x, int y, int i, int j);
+  virtual void add(Board const & board, int x, int y, int i, int j);
 
 protected:
   int level;

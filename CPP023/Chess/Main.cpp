@@ -2,7 +2,7 @@
 // All rights reserved.
 
 #include "Board.hpp"
-#include "Explorer.hpp"
+#include "Tree.hpp"
 
 int main() {
   // jeu initial
@@ -10,6 +10,13 @@ int main() {
   board.print();
 
   // explore l'arbre de possibilités
-  Explorer root(2);
-  board.exploreMoveTree(board.getPieceAt(4, 7), root);
+  Tree white(2);
+  board.exploreMoveTree(board.getPieceAt(4, 7), white);
+  white.play(board);
+  board.print();
+
+  Tree black(2);
+  board.exploreMoveTree(board.getPieceAt(4, 0), black);
+  black.play(board);
+  board.print();
 }
