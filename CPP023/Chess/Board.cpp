@@ -68,13 +68,13 @@ void Board::print() const {
   std::cout << " abcdefgh " << std::endl << std::endl;
 }
 
-// affichage des déplacements possibles sur la console
-void Board::printPossibleMoves() const {
+// explore les déplacements possibles
+void Board::exploreMoveTree(Piece const * opponent, Explorer & explorer) const {
   for(int j = 0; j != N; ++j) {
     for(int i = 0; i != N; ++i) {
       Piece const * item = getPieceAt(i, j);
-      if(item) {
-        item->printPossibleMoves(*this, i, j);
+      if(item && !item->isSameTeam(opponent)) {
+        item->explorePossibleMoves(explorer, *this, i, j);
       }
     }
   }

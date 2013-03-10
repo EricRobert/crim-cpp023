@@ -11,10 +11,14 @@ class Pawn : public Piece
 public:
   Pawn(char c);
 
-  void printPossibleMoves(Board const & board, int i, int j) const;
+  void explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const;
+
+  int getCost() const {
+    return 1;
+  }
 
 private:
-  void printCapture(Board const & board, int x, int y, int i, int j) const;
+  void exploreCapture(Explorer & explorer, Board const & board, int x, int y, int i, int j) const;
 };
 
 #endif

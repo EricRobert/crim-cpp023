@@ -3,6 +3,7 @@
 
 #include "Piece.hpp"
 #include "Board.hpp"
+#include "Explorer.hpp"
 
 Piece::Piece(char value) : c(value) {
 }
@@ -24,17 +25,19 @@ char Piece::getNotation() const {
   return c;
 }
 
-void Piece::printPossibleMoves(Board const & board, int i, int j) const {
+void Piece::explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const {
 }
 
-void Piece::printMove(Board const & board, int x, int y, int i, int j) const {
+void Piece::exploreMove(Explorer & explorer, Board const & board, int x, int y, int i, int j) const {
   if(board.isValid(i, j)) {
     Piece const * self = board.getPieceAt(x, y);
     Piece const * item = board.getPieceAt(i, j);
     if(!item || !item->isSameTeam(self)) {
-      Board copy(board);
-      copy.movePiece(x, y, i, j);
-      copy.print();
+      explorer.add(board, x, y, i, j);
     }
   }
+}
+
+int Piece::getCost() const {
+  return 0;
 }

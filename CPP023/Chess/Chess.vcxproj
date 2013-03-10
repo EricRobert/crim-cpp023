@@ -77,6 +77,7 @@
     <ClCompile Include="Bishop.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Castle.cpp" />
+    <ClCompile Include="Explorer.cpp" />
     <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="Bishop.hpp" />
     <ClInclude Include="Board.hpp" />
     <ClInclude Include="Castle.hpp" />
+    <ClInclude Include="Explorer.hpp" />
     <ClInclude Include="King.hpp" />
     <ClInclude Include="Knight.hpp" />
     <ClInclude Include="Mover.hpp" />

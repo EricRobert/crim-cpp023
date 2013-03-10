@@ -11,7 +11,11 @@ class Bishop : public virtual Mover
 public:
   Bishop(char c);
 
-  void printPossibleMoves(Board const & board, int i, int j) const;
+  void explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const;
+
+  int getCost() const {
+    return 3;
+  }
 };
 
 #endif

@@ -2,19 +2,14 @@
 // All rights reserved.
 
 #include "Board.hpp"
+#include "Explorer.hpp"
 
 int main() {
   // jeu initial
   Board board;
   board.print();
 
-  // ouvertures
-  board.printPossibleMoves();
-
-  // bouge le chevalier noir
-  board.movePiece(1, 7, 2, 5);
-  board.print();
-
-  // encore...
-  board.printPossibleMoves();
+  // explore l'arbre de possibilités
+  Explorer root(2);
+  board.exploreMoveTree(board.getPieceAt(4, 7), root);
 }

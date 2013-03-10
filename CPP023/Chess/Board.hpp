@@ -4,6 +4,7 @@
 #ifndef BOARD__INCLUDED
 #define BOARD__INCLUDED
 
+class Explorer;
 class Piece;
 
 // représentation de l'échiquier
@@ -15,7 +16,7 @@ public:
   Board();
 
   void print() const;
-  void printPossibleMoves() const;
+  void exploreMoveTree(Piece const * opponent, Explorer & explorer) const;
   bool isValid(int i, int j) const;
   void movePiece(int x, int y, int i, int j);
   void set(int i, int j, Piece * item);

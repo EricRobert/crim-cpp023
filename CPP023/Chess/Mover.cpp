@@ -1,10 +1,14 @@
+// Copyright (c) 2012 Eric Robert.
+// All rights reserved.
+
 #include "Mover.hpp"
 #include "Board.hpp"
+#include "Explorer.hpp"
 
 Mover::Mover(char c) : Piece(c) {
 }
 
-void Mover::slide(Board const & board, int x, int y, int dx, int dy) const {
+void Mover::slide(Explorer & explorer, Board const & board, int x, int y, int dx, int dy) const {
   Piece const * self = board.getPieceAt(x, y);
   int i = x + dx;
   int j = y + dy;
@@ -13,13 +17,13 @@ void Mover::slide(Board const & board, int x, int y, int dx, int dy) const {
     if(item) {
       // on termine le glissement dès qu'on rencontre une pièce
       if(!item->isSameTeam(self)) {
-        printMove(board, x, y, i, j);
+        explorer.add(board, x, y, i, j);
       }
 
       break;
     }
     else {
-      printMove(board, x, y, i, j);
+      explorer.add(board, x, y, i, j);
     }
 
     i += dx;

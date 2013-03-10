@@ -1,3 +1,6 @@
+// Copyright (c) 2012 Eric Robert.
+// All rights reserved.
+
 #ifndef MOVER__INCLUDED
 #define MOVER__INCLUDED
 
@@ -10,7 +13,7 @@ public:
   Mover(char c);
 
 protected:
-  void slide(Board const & board, int x, int y, int dx, int dy) const;
+  void slide(Explorer & explorer, Board const & board, int x, int y, int dx, int dy) const;
 };
 
 #endif

@@ -6,9 +6,9 @@
 Castle::Castle(char c) : Mover(c) {
 }
 
-void Castle::printPossibleMoves(Board const & board, int i, int j) const {
-  slide(board, i, j, 1, 0);
-  slide(board, i, j, -1, 0);
-  slide(board, i, j, 0, 1);
-  slide(board, i, j, 0, -1);
+void Castle::explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const {
+  slide(explorer, board, i, j, 1, 0);
+  slide(explorer, board, i, j, -1, 0);
+  slide(explorer, board, i, j, 0, 1);
+  slide(explorer, board, i, j, 0, -1);
 }
