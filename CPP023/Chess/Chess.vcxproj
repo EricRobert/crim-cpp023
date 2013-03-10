@@ -74,7 +74,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bishop.cpp" />
+    <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Castle.cpp" />
+    <ClCompile Include="King.cpp" />
+    <ClCompile Include="Knight.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="Queen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bishop.hpp" />
+    <ClInclude Include="Board.hpp" />
+    <ClInclude Include="Castle.hpp" />
+    <ClInclude Include="King.hpp" />
+    <ClInclude Include="Knight.hpp" />
+    <ClInclude Include="Pawn.hpp" />
+    <ClInclude Include="Piece.hpp" />
+    <ClInclude Include="Queen.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
