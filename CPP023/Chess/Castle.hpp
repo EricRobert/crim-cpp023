@@ -4,12 +4,14 @@
 #ifndef CASTLE__INCLUDED
 #define CASTLE__INCLUDED
 
-#include "Piece.hpp"
+#include "Mover.hpp"
 
-class Castle : public Piece
+class Castle : public virtual Mover
 {
 public:
   Castle(char c);
+
+  void printPossibleMoves(Board const & board, int i, int j) const;
 };
 
 #endif

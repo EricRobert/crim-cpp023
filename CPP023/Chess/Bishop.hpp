@@ -4,12 +4,14 @@
 #ifndef BISHOP__INCLUDED
 #define BISHOP__INCLUDED
 
-#include "Piece.hpp"
+#include "Mover.hpp"
 
-class Bishop : public Piece
+class Bishop : public virtual Mover
 {
 public:
   Bishop(char c);
+
+  void printPossibleMoves(Board const & board, int i, int j) const;
 };
 
 #endif
