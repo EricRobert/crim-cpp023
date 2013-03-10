@@ -3,7 +3,7 @@
 
 #include "Queen.hpp"
 
-Queen::Queen(char c) : Mover(c), Bishop(c), Castle(c) {
+Queen::Queen(int type) : Mover(type ? 'q' : 'Q'), Bishop(0), Castle(0) {
 }
 
 void Queen::explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const {

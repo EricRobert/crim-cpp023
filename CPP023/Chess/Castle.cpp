@@ -3,7 +3,7 @@
 
 #include "Castle.hpp"
 
-Castle::Castle(char c) : Mover(c) {
+Castle::Castle(int type) : Mover(type ? 'r' : 'R') {
 }
 
 void Castle::explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const {

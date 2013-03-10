@@ -3,7 +3,7 @@
 
 #include "Bishop.hpp"
 
-Bishop::Bishop(char c) : Mover(c) {
+Bishop::Bishop(int type) : Mover(type ? 'b' : 'B') {
 }
 
 void Bishop::explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const {

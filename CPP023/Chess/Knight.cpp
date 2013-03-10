@@ -3,7 +3,7 @@
 
 #include "Knight.hpp"
 
-Knight::Knight(char c) : Piece(c) {
+Knight::Knight(int type) : Piece(type ? 'n' : 'N') {
 }
 
 void Knight::explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const {

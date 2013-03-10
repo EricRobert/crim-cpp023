@@ -10,7 +10,7 @@
 class Queen : public Bishop, public Castle
 {
 public:
-  Queen(char c);
+  Queen(int type);
 
   void explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const;
 

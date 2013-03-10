@@ -9,7 +9,7 @@
 class Castle : public virtual Mover
 {
 public:
-  Castle(char c);
+  Castle(int type);
 
   void explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const;
 

@@ -9,7 +9,7 @@
 class Pawn : public Piece
 {
 public:
-  Pawn(char c);
+  Pawn(int type);
 
   void explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const;
 

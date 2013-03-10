@@ -17,6 +17,7 @@ public:
 
   void print() const;
   void exploreMoveTree(Piece const * opponent, Explorer & explorer) const;
+  bool isCheckmate(Piece const * king);
   bool isValid(int i, int j) const;
   void movePiece(int x, int y, int i, int j);
   void set(int i, int j, Piece * item);

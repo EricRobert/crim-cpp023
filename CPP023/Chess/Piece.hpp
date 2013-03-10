@@ -13,6 +13,9 @@ class Piece
 public:
   Piece(char value);
 
+  virtual ~Piece() {
+  }
+
   bool isSameTeam(Piece const * item) const;
   bool isWhite() const;
   bool isBlack() const;

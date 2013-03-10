@@ -9,7 +9,7 @@
 class Bishop : public virtual Mover
 {
 public:
-  Bishop(char c);
+  Bishop(int type);
 
   void explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const;
 

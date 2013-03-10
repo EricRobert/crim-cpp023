@@ -3,7 +3,7 @@
 
 #include "King.hpp"
 
-King::King(char c) : Piece(c) {
+King::King(int type) : Piece(type ? 'k' : 'K') {
 }
 
 void King::explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const {

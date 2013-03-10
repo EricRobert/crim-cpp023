@@ -9,7 +9,7 @@
 class Knight : public Piece
 {
 public:
-  Knight(char c);
+  Knight(int type);
 
   void explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const;
 

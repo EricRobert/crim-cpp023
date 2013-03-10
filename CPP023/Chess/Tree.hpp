@@ -4,10 +4,10 @@
 #ifndef TREE__INCLUDED
 #define TREE__INCLUDED
 
+#include <vector>
+
 #include "Explorer.hpp"
 #include "Move.hpp"
-
-#include <vector>
 
 class Tree : public Explorer
 {

@@ -5,7 +5,7 @@
 #include "Board.hpp"
 #include "Explorer.hpp"
 
-Pawn::Pawn(char c) : Piece(c) {
+Pawn::Pawn(int type) : Piece(type ? 'p' : 'P') {
 }
 
 void Pawn::explorePossibleMoves(Explorer & explorer, Board const & board, int i, int j) const {

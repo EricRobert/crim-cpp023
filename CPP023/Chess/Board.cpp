@@ -2,44 +2,19 @@
 // All rights reserved.
 
 #include "Board.hpp"
-#include "Castle.hpp"
-#include "Knight.hpp"
-#include "Bishop.hpp"
-#include "Queen.hpp"
 #include "King.hpp"
+#include "Queen.hpp"
+#include "Knight.hpp"
 #include "Pawn.hpp"
+#include "Explorer.hpp"
 
 // dépendances
 #include <iostream>
 
 // constructeur par défaut qui initialise l'échiquier
 Board::Board() {
-  const char * board =
-    "RNBQKBNR"
-    "PPPPPPPP"
-    "        "
-    "        "
-    "        "
-    "        "
-    "pppppppp"
-    "rnbqkbnr";
-
-  Piece * map[128] = {};
-  map['R'] = new Castle('R');
-  map['r'] = new Castle('r');
-  map['N'] = new Knight('N');
-  map['n'] = new Knight('n');
-  map['B'] = new Bishop('B');
-  map['b'] = new Bishop('b');
-  map['Q'] = new Queen('Q');
-  map['q'] = new Queen('q');
-  map['K'] = new King('K');
-  map['k'] = new King('k');
-  map['P'] = new Pawn('P');
-  map['p'] = new Pawn('p');
-
   for(int i = 0; i != N * N; ++i) {
-    squares[i] = map[board[i]];
+    squares[i] = 0;
   }
 }
 
@@ -78,6 +53,16 @@ void Board::exploreMoveTree(Piece const * opponent, Explorer & explorer) const {
       }
     }
   }
+}
+
+bool Board::isCheckmate(Piece const * king) {
+  for(int i = 0; i != N * N; ++i) {
+    if(squares[i] == king) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 // validation des coordonnées
